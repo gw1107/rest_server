@@ -120,6 +120,6 @@ app.post('/power', (req,res) =>
 	// when result ok, send status 200
 	res.sendStatus(200);
 });
-app.listen(port, () => console.log(`Hello World app is listening on port ${port}`));
+app.listen(port, () => console.log(`Server is listening on port ${port}`));
 
 
