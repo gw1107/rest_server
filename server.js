@@ -3,7 +3,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.use(bodyParser);
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.get('/car', (req,res) => 
 {
@@ -75,9 +76,8 @@ app.get('/power', (req,res) =>
 
 app.post('/car', (req,res) => 
 {
-	console.log(req);		
 	const data = req.body;
-	console.log("post-car: " + data);
+	console.log("post-car: " + JSON.stringify(data));
 
 	// TODO: here call web3.js with data --> blockchain
 	// result <-- blockchain
